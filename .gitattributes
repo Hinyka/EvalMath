@@ -1,0 +1,7 @@
+# Exclude these files from git export
+/tests/ export-ignore
+/.editorconfig export-ignore
+/.git* export-ignore
+/*.dist export-ignore
+/*.dist.neon export-ignore
+/.*.yml export-ignore
