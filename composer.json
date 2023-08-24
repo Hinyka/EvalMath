@@ -1,24 +1,64 @@
 {
-	"name" : "webit/eval-math",
-	"description" : "EvalMath",
-	"type" : "library",
-	"keywords" : [
-		"EvalMath"
-	],
-	"require": {
-		"php": ">=5.3"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "~4.2"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Webit\\Util\\EvalMath\\" : "src/"
-		}
-	},
+    "name": "hinyka/evalmath",
+    "description": "Use the EvalMath when you want to evaluate mathematical expressions from untrusted sources.",
+    "type": "library",
+    "keywords": [
+        "EvalMath",
+        "eval",
+        "math",
+        "expression",
+        "evaluator"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Karel Hink",
+            "email": "info@karelhink.cz"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Hinyka/EvalMath/issues",
+        "source": "https://github.com/Hinyka/EvalMath"
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "squizlabs/php_codesniffer": "^3.7.2",
+        "phpstan/phpstan": ">=1.10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hinyka\\EvalMath\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hinyka\\EvalMath\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-main": "2.x-dev"
+        }
+    },
+    "scripts": {
+        "phpst": "phpstan analyse",
+        "test": "phpunit",
+        "phpcs": "phpcs -s -p --extensions=php --standard=phpcs.xml.dist src tests",
+        "phpcbf": "phpcbf -s -p --extensions=php --standard=phpcs.xml.dist src tests"
+    },
+    "scripts-descriptions": {
+        "phpst": "Analyze code with PHPStan",
+        "test": "Run all unit tests!",
+        "phpcs": "Analyze code with PHP CodeSniffer",
+        "phpcbf": "Fix coding standards with PHP Code Beautifier and Fixer"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }

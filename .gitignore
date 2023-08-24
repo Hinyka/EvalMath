@@ -4,3 +4,7 @@
 .project
 .settings
 .buildpath
+.phpunit.result.cache
+phpunit.xml
+phpstan.neon
+EvalMathException.log
